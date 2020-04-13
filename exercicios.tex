@@ -1,0 +1,258 @@
+\documentclass[a4paper]{article}
+\usepackage{packages} 
+\title{Introdução à Teoria dos Conjuntos (MAT5770) - Exercícios}
+\author{Ariel Serranoni Soares da Silva  - Número USP: 7658024}
+\date{Primeiro Semestre de 2020}
+\begin{document}
+\maketitle
+\section*{Considerações iniciais}
+\subsection*{Notação}
+\subsection*{Exercícios}
+\section{Lista 1}
+\subsection{Capítulo 1}
+\begin{exercicio}[3.1 do Livro - Página 11]
+  Mostre que o conjunto de todos os \(x\) tais que \(x\in A\) e \(x\not\in B\) existe.
+\end{exercicio}
+\begin{proof}[Resolução]
+Considere \(P(x)\coloneqq x\not\in B\). Então, como \(A\) existe podemos, pelo axioma da compreensão, considerar o conjunto 
+\(\{x\in A\,\colon P(x)\}\).
+\end{proof}
+\begin{exercicio}[3.2 do Livro - Página 11]
+ Substitua o Axioma da Existência pelo Axioma Fraco da Existência. Mostre a
+ validade do Axioma da Existência usando sua versão fraca e o Axioma da Compreensão.
+\end{exercicio}
+ \begin{proof}[Resolução]
+Como algum conjunto existe, seja \(A\) tal conjunto. Considere \(P(x)\coloneqq x\not= x\). 
+Pelo axioma da compreensão, o conjunto \(B\coloneqq\{x\in A\,\colon P(x)\}\) também existe.
+Agora falta mostrar que \(B\) não tem elementos. Seja \(y\in B\), então \(P(y)\) vale. Isto é,
+\(y\not = y\); o que é um absurdo. Concluímos assim que \(B\) não tem elementos. Logo, existe um 
+conjunto sem elementos.
+\end{proof}
+\begin{exercicio}[3.5 do Livro - Página 12]
+Dados conjuntos \(A\), \(B\), e \(C\) existe um conjunto \(P\) tal que \(x\in P\) se e só se
+\(x=A\), \(x=B\), ou \(x=C\). Generalize incluindo um quarto conjunto \(D\).
+\end{exercicio}
+\begin{proof}[Resolução]
+Primeiro, como \(A\) e \(B\) são conjuntos, podemos aplicar o axioma do par para garantir 
+a existência de um conjunto \(R=\{A,B\}\) tal que \(x\in R\) se e só se \(x= A\) ou
+\(x = B\). O mesmo axioma nos dá que existe um conjunto \(S=\{C\}\) tal que
+\(x\in S\) se e só se \(x=C\). Finalmente o axioma da união nos dá que existe um conjunto
+\(U=\{A,B,C\}\) tal que \(x\in U\) se e somente se \(x=A\), \(x=B\), ou \(x=C\).
+Generalizar este resultado incluindo um quarto conjunto \(D\) é bastante
+simples. Basta trocar o conjunto \(S\) por \(S^\prime=\{C,D\}\) (que existe pelo
+axioma do par) e então o axioma da união nos dá a existência de um conjunto \(U^\prime=\{A,B,C,D\}\).
+\end{proof}
+\begin{exercicio}[3.6 do Livro - Página 12]
+Mostre que \(\pow{X}\subseteq X\) é falso para todo conjunto \(X\).
+\end{exercicio}
+\begin{proof}[Resolução]
+  Considere a propriedade \(P(S)\coloneqq [S\not\in S]\) e então pelo axioma da
+  compreensão temo que o conjunto \(Y\coloneqq\{x\in X\,\colon P(x)\}\) existe.
+  Além disso, temos que \(Y\subseteq X\) e portanto \(Y\in\pow{X}\) pelo axioma
+  das partes. Por outro lado, se \(Y\in X\) temos dois casos: se \(Y\in Y\)
+  então \(Y\not\in Y\) pela definição de \(Y\). Se \(Y\not\in Y\) então
+  novamente pela definição de \(Y\) segue que \(Y\in Y\). Absurdo.
+  Portanto concluímos que \(Y\not\in X\).
+\end{proof}
+\begin{exercicio}[4.2(a) do Livro - Página 15]
+  Sejam \(A\) e \(B\) conjuntos. Mostre a seguinte equivalência:
+  \begin{enumerate}[(i)]
+  \item \(A\subseteq B\);
+  \item \(A\cap B = A\);
+  \item \(A\cup B = B\);
+  \item \(A-B = \varnothing\).
+  \end{enumerate}
+\end{exercicio}
+\begin{proof}[Resolução]
+  \begin{itemize}
+  \item (i)\(\iff\)(ii): \begin{align*}
+                               A\subseteq B &\iff B = A\cup (B-A)
+                                 \\&\iff A\cap B = A \cap ( A\cup (B-A))
+                                 \\&= (A\cap A)\cup (A\cap (B-A))
+                                 \\&=A.
+                             \end{align*}
+   \item (i)\(\iff\)(iii): \begin{align*}
+   A\cup B= B &\iff B = A \cup (B-A)\\&\iff A\subseteq B.\end{align*}
+                                                           
+
+ \item (i)\(\iff\)(iv):\begin{align*}
+      A\subseteq B & \iff B=A\cup B \\& = (A-B)\underbrace{\cup(B-A)\cup(A\cap B)}_{=B}=(A-B)\cup B
+                                                                                  \\& \iff (A-B)=\varnothing
+                                                                                   \end{align*}
+
+                                                         \end{itemize}
+\end{proof}
+\begin{exercicio}[4.4 do Livro - Página 15]
+ Seja \(A\) um conjunto. Mostre que o ``complemento'' de \(A\) não existe. (O
+ ``complemento'' de \(A\) é o conjunto dos \(x\) tais que \(x\not\in A\).) 
+\end{exercicio}
+\begin{proof}[Resolução]
+Suponha que o conjunto \(A^c\coloneqq \{x\,\colon x\not\in A\}\) existe. Então
+pelo Axioma da União o conjunto \(A\cup A^c\) de todos os conjuntos existe. Absurdo.
+\end{proof}
+\begin{exercicio}[Exercício 4.6 do Livro - Página 15]
+Moste que \(\bigcap S\) existe para todo \(S\not=\varnothing\). Por que é
+necessária a hipótese \(S\not=\varnothing\)?
+\end{exercicio}
+\begin{proof}[Resolução]
+  Se \(S\) um conjunto então podemos considerar
+  \(P(x)\coloneqq [x\in W \text{ para todo } W\in S].\)
+  Então, tomando um conjunto \(A\in S\) podemos considerar, pelo Axioma da Compreensão,
+  \[\bigcap S = \{x\in A\,\colon P(x)\}.\]
+
+  Além disso, vejamos que \(\bigcap \varnothing\) é o ``conjunto de todos os
+  conjuntos'': Com efeito, vamos buscar um conjunto \(W\in \varnothing\) que contenha
+  um elemento \(x\) tal que  \(x\not\in\bigcap\varnothing.\) Como óbviamente não
+  conseguimos encontrar tal conjunto \(W\) temos um absurdo.
+\end{proof}
+\subsection{Capítulo 2}
+\setcounter{theorem}{0}
+\begin{exercicio}[1.3 do Livro - Página 18]
+Prove que se \((a,b)=(b,a)\), então \(a=b\).
+\end{exercicio}
+\begin{proof}[Resolução]
+  Por definição, temos que \((a,b)=(b,a)\) se, e somente se
+  \[\{\{a\},\{a,b\}\}=\{\{b\},\{b,a\}\}.\]
+  Pelo Axioma da Extensionalidade, isso acontecerá se, e somente se
+  \(\{a\}=\{b\}\) ou \(\{a\}=\{b,a\}\). Em ambos os casos precisamos que \(a=b\).
+\end{proof}
+\begin{exercicio}[1.2 do Livro - Página 18]
+  Prove que \((a,b),(a,b,c),\) e \((a,b,c,d)\) existem para quaisquer conjuntos \(a,b,c,d\).
+\end{exercicio}
+\begin{proof}[Resolução]
+Para mostrar a existência do par ordenado \((a,b)\), aplicamos o Axioma do Par
+para formar os conjuntos \(\{a\}=\{a,a\}\) e \(\{a,b\}\). Aplicando o mesmo
+axioma mais uma vez mostramos que o conjunto \((a,b)=\{\{a\},\{a,b\}\}\) existe.
+Para incluir um terceiro conjunto \(c\) (formando assim uma tripla ordenada),
+aplicamos o Exercício 3.5 do Livro e então pelo Axioma do Par obtemos a
+existência do conjunto \((a,b,c)=\{\{a\},\{a,b\},\{a,b,c\}\}\). Para incluir um quarto
+conjunto \(d\), fazemos o mesmo processo.
+\end{proof}
+\begin{exercicio}[1.4 do Livro - Página 18]
+  Prove que \((a,b,c)=(a^\prime,b^\prime,c^\prime)\) implica \(a=a^\prime\),
+  \(b=b^\prime\), e \(c=c^\prime\). Mostre um resultado similar para quatro
+  conjuntos \(a,b,c,d\).
+\end{exercicio}
+\begin{proof}[Resolução]
+Primeiramente note que \((a,b,c)=((a,b),c)\)   
+\end{proof}
+\begin{exercicio}[ 2.1 do Livro - Página 22]
+ Dada uma relação \(R\), seja \(A=\bigcup\bigcup R\); prove que \((a,b)\in R\)
+ implica que \(a,b\in A\); use isso para mostrar que \(\text{dom}(R)\) e
+ \(\text{ran}(R)\) existem.
+\end{exercicio}
+\begin{exercicio}[2.2 do Livro - Página 22]
+Sejam \(R, S\) relações. Mostre que \(R^{-1}\) e \(S\circ R\) existem
+\end{exercicio}
+\begin{exercicio}[2.6 do Livro - Página 23]
+  Sejam \(R,S\), e \(T\) relações binárias. Mostre que
+  \((R\circ S)\circ T= R\circ (S\circ T)\).
+\end{exercicio}
+\begin{exercicio}[2.8(a) do Livro - Página 23]
+Prove que \(A\times B=\varnothing\) se, e somente se \(A=\varnothing\) ou \(B=\varnothing\).
+\end{exercicio}
+\begin{exercicio}[2.8(b) do Livro - Página 23]
+Prove que \((A_1\cup A_2)\times B=A_1\times B\cup A_2\times B.\) 
+\end{exercicio}
+\begin{exercicio}[3.1 do Livro - Página 28]
+ Prove que se \(\ran (f)\subseteq \dom (g)\), então \(\dom (g\circ f) = \dom (f)\).
+\end{exercicio}
+\begin{exercicio}[3.4(b) do Livro - Página 28]
+Prove que se existe uma função \(g\) tal que \(g\circ f = \text{Id}_{\dom (f)}\)
+então \(f\) é inversível e \(f^{-1}=\rest{g}{\ran (f)}\).  
+\end{exercicio}
+\begin{exercicio}[3.4(a) do Livro - Página 28]
+ Prove que se \(f\) é inversível então \(f\circ f^{-1}=\text{Id}_{\dom (f)}\) e
+ \(f^{-1}\circ f = \text{Id}_{\ran (f)}\).
+\end{exercicio}
+\begin{exercicio}
+  Prove as seguintes relações:
+  \begin{enumerate}[(i)]
+  \item \(f(\bigcup_{a\in A} F_a)=\bigcup_{a\in A} f(F_a)\);
+   \item  \(f^{-1}(\bigcup_{a\in A} F_a)=\bigcup_{a\in A}f^{-1}(F_a)\);
+   \item \(f(\bigcap_{a\in A}F_a)\subseteq \bigcap_{a\in A}f(F_a)\);
+    \item \( f^{-1}(\bigcap_{a\in A} F_a)=\bigcap_{a\in A}f^{-1}(F_a) \).
+   \end{enumerate}
+ \end{exercicio}
+ \begin{exercicio}
+   Verifique se as seguintes relações são reflexivas, simétricas ou transitivas:
+   \begin{enumerate}[(i)]
+   \item \(x\) é maior do que \(y\), onde \(x,y\) são números inteiros.
+    \item \(n\) divide \(m\), com \(n,m\) números inteiros.
+    \item \(x\not = y\), sobre o conjunto dos números naturais.
+     \item \(\subseteq\) e \(\subset\) em \(\pow{A}\) para \(A\) um conjunto qualquer.
+     \item \(\varnothing\) sobre o conjunto vazio.
+      \item \(varnothing\) sobre um conjunto não vazio \(A\).
+     \end{enumerate}
+   \end{exercicio}
+   \begin{exercicio}
+    Seja \(f\colon A\to B\) sobrejetora. Defina \(E\) sobre \(A\) tal que \(a E
+    b\) se e só se \(f(a)=f(b).\)
+    \begin{enumerate}[(i)]
+    \item Prove que \(E\) é uma relação de equivalência.
+    \item Mostre que a função \(\phi\colon A/ E\to B\) dada por
+      \(\phi([a]_E)=f(a)\) está bem definida.
+    \item Considere \(j\colon A\to A/E\) dada por \(j(a)=[a]_E\). Mostre que
+      \(\phi\circ j=f\).
+    \end{enumerate}
+  \end{exercicio}
+  \begin{exercicio}
+    Dê exemplos de ordens parciais finitas \((A,\leq)\) e subconjuntos \(B\) de
+    \(A\) tais que:
+    \begin{enumerate}[(i)]
+    \item \(B\) não possui maior elemento;
+    \item \(B\) não possui menor elemento;
+    \item \(B\) não possui maior elemento, mas possui supremo;
+     \item \(B\) não possui supremo.
+       \end{enumerate}
+     \end{exercicio}
+     \begin{exercicio}
+       Seja \(R\) uma relação reflexiva e transitiva sobre um conjunto \(A\)
+       (chamada de \emph{pré-ordem}). Defina \(E\) por \(a E b\) se e só se \(a
+       R b\) e \(b R a\). Mostre que \(E\) é uma relação de equivalência sobre
+       \(A\) e defina \(R/E\) sobre \(A/E\) por \([a]_E R/E [b]_E\). Prove que
+       \(R/E\) é de fato uma ordem parcial sobre \(A/E\).
+     \end{exercicio}
+     \begin{exercicio}
+     Mostre que se \((P,\leq )\) e \((Q,\preceq )\) são ordens parciais isomorfas
+     e \((P,\leq )\) é uma ordem linear, então \((Q,\preceq )\) também é uma
+     ordem linear.
+   \end{exercicio}
+   \begin{exercicio}
+     Mostre que
+     \begin{enumerate}[(i)]
+     \item A identidade é um isomorfismo de ordem;
+     \item A inversa de um isomorfismo também é um isomorfismo;
+       \item A composição de isomorfismos também é um isomorfismo.
+       \end{enumerate}
+    \end{exercicio}
+\subsection{Capítulo 3}
+\setcounter{theorem}{0}
+
+\begin{exercicio}
+Mostre que para qualquer \(x\) vale que \(x\subset S(x)\) e não existe \(k\) tal
+que \(x\subsetneq k \subsetneq S(x)\).
+\end{exercicio}
+\begin{exercicio}
+Mostre que não existem números naturais \(k,n\) tais que \(n < k < n+1\).
+\end{exercicio}
+\begin{exercicio}
+ Prove que \(m < n\) implica que \(m\leq n+1\); conclua que \(m+1 < n+1\) e que
+portanto a função sucessora \(S(n)\) é injetora sobre o conjunto dos número naturais.
+\end{exercicio}
+\begin{exercicio}
+  Mostre que cada natural \(n\) é o conjunto dos naturais que o precedem. Isto
+  é, \(n=\{m\in\Naturals\,\colon m< n\}.\)
+\end{exercicio}
+\begin{exercicio}
+Mostre que não existe função \(f\colon\Naturals\to\Naturals\) tal que
+\(f(n)>f(n+1)\) para todo \(n\in\Naturals\). (Ou seja, não existe uma sequência
+estritamente decrescente de números naturais).  
+\end{exercicio}
+\section{Lista 2}
+\begin{exercicio}
+
+\end{exercicio}
+
+\section{Lista 3}
+\end{document}
